@@ -30,7 +30,7 @@ def deploy_project(project_name, zip_file):
     subprocess.run(["git", "commit", "-m", "🚀 Déploiement initial depuis Streamlit Cloud"], check=True)
 
     # ✅ URL avec token à compléter par toi-même
-    github_repo = "https://ghp_IxKEQ87[...]@github.com/HERVELEV/patrimoine-ai.git"
+    github_repo = "https://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@github.com/HERVELEV/patrimoine-ai.git"
 
     # Push GitHub
     subprocess.run(["git", "remote", "add", "origin", github_repo], check=True)
