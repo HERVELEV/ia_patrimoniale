@@ -1,0 +1,34 @@
+name: Deploiement IA Patrimoniale
+
+on:
+  push:
+    paths:
+      - 'app_ia_patrimoniale_v16.zip'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: 🧩 Installer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: 🔓 Dézipper le projet
+        run: |
+          unzip app_ia_patrimoniale_v16.zip -d app_ia_patrimoniale_v16
+          rm app_ia_patrimoniale_v16.zip
+
+      - name: ⚙️ Configuration Git
+        run: |
+          git config user.name "Hervé Lévy"
+          git config user.email "herve.levy61@gmail.com"
+
+      - name: 🚀 Commit & Push
+        run: |
+          git add .
+          git commit -m "✅ Déploiement auto depuis GitHub Actions"
+          git push
