@@ -33,9 +33,9 @@ if uploaded_file:
 
             # Appel du script PowerShell
             result = subprocess.run(
-                ["powershell", "-ExecutionPolicy", "Bypass", "-File", "lancer_deploiement.ps1", project_name],
-                capture_output=True, text=True
-            )
+    ["python", "lancer_deploiement.py", project_name, zip_save_path],
+    capture_output=True, text=True
+)
 
             if result.returncode == 0:
                 st.success("🚀 Déploiement GitHub terminé avec succès !")
