@@ -1,5 +1,13 @@
+pytesseract
+face_recognition
+web3
+Pillow
 streamlit
 openai
 pandas
 fpdf
 twilio
+textblob
+numpy
+scikit-learn
+hashlib
